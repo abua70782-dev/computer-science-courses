@@ -216,7 +216,9 @@ main section:nth-of-type(3) > div:nth-child(2) {
   justify-content: center;
   gap: 12px;
 }
-
+*img{
+  background-color:grey;
+}
 main section:nth-of-type(3) > div:nth-child(2) div {
 
   width: 35px;
