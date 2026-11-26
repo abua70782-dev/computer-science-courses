@@ -20,7 +20,9 @@ body {
 
   background-color: #fff;
 }
-
+section main div{
+  display:flex;
+}
 /* 1. Top Header / Navigation Bar */
 header {
   grid-area: header;
