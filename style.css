@@ -1,0 +1,299 @@
+/* Global Reset & Base Styles (Haala waliigalaa) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 20px auto;
+  border: 2px solid #333;
+  background-color: #fff;
+}
+
+/* 1. Top Header / Navigation Bar */
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  background-color: #e9ecef;
+}
+
+header > div {
+  padding: 14px 24px;
+  font-weight: bold;
+  border-right: 2px solid #333;
+}
+
+header nav {
+  display: flex;
+  flex-grow: 1;
+}
+
+header nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  padding: 14px 10px;
+  border-right: 1px solid #ccc;
+  font-weight: 500;
+}
+
+header nav a:last-child {
+  border-right: none;
+}
+
+header nav a:hover {
+  background-color: #d0d7de;
+}
+
+/* 2. Left Sidebar (Menu Bitaa) */
+aside {
+  grid-area: sidebar;
+  border-right: 2px solid #333;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin-bottom: 10px;
+}
+
+aside a {
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  display: block;
+  padding: 4px 0;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* 3. Main Content Area */
+main {
+  grid-area: main;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Row 1: 4 Image Boxes */
+main section:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+main section:nth-of-type(1) img {
+  width: 100%;
+  height: 75px;
+  border: 2px solid #333;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
+/* Row 2: Red, Black, Blue & Pink Blocks */
+main section:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 15px;
+}
+
+/* Red Box */
+main section:nth-of-type(2) > div:first-child {
+  background-color: #e63946;
+  color: #fff;
+  border: 2px solid #333;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Right Nested Grid (Black on top, Blue + Pink below) */
+main section:nth-of-type(2) > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 85px 55px;
+  gap: 10px;
+}
+
+/* Black Box */
+main section:nth-of-type(2) > div:last-child > div:nth-child(1) {
+  grid-column: 1 / -1;
+  background-color: #1d1d1d;
+  color: #fff;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Blue Box */
+main section:nth-of-type(2) > div:last-child > div:nth-child(2) {
+  background-color: #2a6f97;
+  color: #fff;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Pink Box */
+main section:nth-of-type(2) > div:last-child > div:nth-child(3) {
+  background-color: #ff8fa3;
+  color: #222;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Row 3: Bottom Cards */
+main section:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 15px;
+  align-items: end;
+}
+
+/* Bottom Card 1 (with small label above) */
+main section:nth-of-type(3) > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+main section:nth-of-type(3) > div:nth-child(1) span {
+  border: 1px solid #333;
+  width: fit-content;
+  padding: 2px 8px;
+  font-size: 12px;
+  background-color: #eee;
+}
+
+main section:nth-of-type(3) > div:nth-child(1) div {
+  border: 2px solid #333;
+  height: 90px;
+}
+
+/* Bottom Card 2 (Two inner squares) */
+main section:nth-of-type(3) > div:nth-child(2) {
+  border: 2px solid #333;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+main section:nth-of-type(3) > div:nth-child(2) div {
+  border: 1px solid #333;
+  width: 35px;
+  height: 35px;
+}
+
+/* Bottom Card 3 (Two squares + bottom line) */
+main section:nth-of-type(3) > div:nth-child(3) {
+  border: 2px solid #333;
+  height: 90px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main section:nth-of-type(3) > div:nth-child(3) > div:first-child {
+  display: flex;
+  justify-content: space-around;
+}
+
+main section:nth-of-type(3) > div:nth-child(3) > div:first-child div {
+  border: 1px solid #333;
+  width: 35px;
+  height: 35px;
+}
+
+main section:nth-of-type(3) > div:nth-child(3) > div:last-child {
+  border-top: 1px solid #333;
+  height: 20px;
+}
+
+/* 4. Footer */
+footer {
+  grid-area: footer;
+  border-top: 2px solid #333;
+  padding: 15px;
+  text-align: center;
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+/* Responsive Layout for Mobile (Mobaayilaaf) */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    margin: 10px;
+  }
+
+  header, header nav {
+    flex-direction: column;
+  }
+
+  header > div {
+    border-right: none;
+    border-bottom: 2px solid #333;
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav a {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  aside {
+    border-right: none;
+    border-bottom: 2px solid #333;
+  }
+
+  main section:nth-of-type(1) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main section:nth-of-type(2),
+  main section:nth-of-type(3) {
+    grid-template-columns: 1fr;
+  }
+}
