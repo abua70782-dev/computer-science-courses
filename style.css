@@ -20,6 +20,9 @@ body {
 
   background-color: #fff;
 }
+body p{
+  font-size:20px;
+}
 section main div{
   display:flex;
   border:1px solid gold;
